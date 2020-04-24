@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   changeHandler = e => {
-    e => this.setState({searchField : e.target.value})
+    this.setState({searchField : e.target.value})
   }
 
   componentDidMount() {
@@ -37,9 +37,11 @@ class App extends Component {
     return (
       <div className="App">
 
+        <h1>Monster Rolodex</h1>
+
         <SearchBox 
           placeholder='search robot' 
-          handleChange={changeHandler}
+          handleChange={this.changeHandler}
         />
         
         <CardList 
